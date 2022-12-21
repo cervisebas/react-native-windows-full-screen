@@ -1,0 +1,42 @@
+{
+  "name": "react-native-windows-full-screen",
+  "title": "React Native Windows Full Screen",
+  "version": "1.0.0",
+  "description": "TODO",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "windows": "react-native run-windows"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cervisebas/react-native-windows-full-screen.git",
+    "baseUrl": "https://github.com/cervisebas/react-native-windows-full-screen"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "Sebástian Cerviño",
+    "email": "cervisebas@gmail.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": ">=16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "18.1.0",
+    "react-native": "0.70.0",
+    "react-native-windows": "0.70.9",
+    "metro-config": "^0.72.3"
+  }
+}
