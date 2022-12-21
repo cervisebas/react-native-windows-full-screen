@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.ReactNative.Managed;
 using Windows.UI.ViewManagement;
+using Windows.ApplicationModel.Core;
 
 namespace ReactNativeWindowsFullScreen
 {
@@ -29,6 +30,10 @@ namespace ReactNativeWindowsFullScreen
         public void isActive(Action<bool> callback) {
             var view = ApplicationView.GetForCurrentView();
             callback(!!view.IsFullScreenMode);
+        }
+        [ReactMethod]
+        public void extendTitleBar(bool status) {
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = status;
         }
     }
 }
