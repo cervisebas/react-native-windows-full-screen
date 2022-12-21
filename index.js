@@ -14,9 +14,13 @@ function exitFullScreen() {
 function isActive() {
     return new Promise((resolve)=>ReactNativeWindowsFullScreen.isActive(resolve));
 }
+function extendTitleBar(status) {
+    ReactNativeWindowsFullScreen.extendTitleBar(status);
+}
 
 export {
     enterFullScreen,
     exitFullScreen,
-    isActive
+    isActive,
+    extendTitleBar
 };
