@@ -14,7 +14,7 @@
       
       See https://microsoft.github.io/react-native-windows/docs/hermes
     -->
-    <UseHermes>false</UseHermes>
+    <UseHermes>true</UseHermes>
 
     <!--
       Changes compilation to assume use of WinUI 3 instead of System XAML.
@@ -33,6 +33,7 @@
     -->
     <UseExperimentalNuget>false</UseExperimentalNuget>
   
+    <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
   </PropertyGroup>
 
 </Project>
