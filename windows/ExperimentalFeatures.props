@@ -33,7 +33,6 @@
     -->
     <UseExperimentalNuget>false</UseExperimentalNuget>
   
-    <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
   </PropertyGroup>
 
 </Project>

@@ -22,6 +22,7 @@ namespace ReactNativeWindowsFullScreen
         [ReactInitializer]
         public void Initialize(ReactContext reactContext) {
             _reactContext = reactContext;
+            Console.WriteLine(reactContext);
         }
         [ReactMethod]
         public void enterFullScreen() {
