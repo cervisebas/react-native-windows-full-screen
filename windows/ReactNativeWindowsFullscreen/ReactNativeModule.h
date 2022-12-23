@@ -3,7 +3,9 @@
 #include "JSValue.h"
 #include "NativeModules.h"
 
-using namespace winrt::Microsoft::ReactNative;
+using namespace winrt;
+using namespace Microsoft::ReactNative;
+using namespace Windows::UI::ViewManagement;
 
 namespace winrt::ReactNativeWindowsFullscreen
 {
@@ -29,12 +31,12 @@ struct ReactNativeModule
     REACT_METHOD(enterFullscreen)
     void enterFullscreen() noexcept
     {
-        auto view = Windows::UI::ViewManagement::ApplicationView::GetForCurrentView();
+        auto view = ApplicationView::GetForCurrentView();
         if (view->IsFullScrenMode)
         {
             if (view->TryEnterFullScreenMode())
             {
-                view->FullScreenSystemOverlayMode = Windows::UI::ViewManagement::FullScreenSystemOverlayMode::Minimal;
+                view->FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Minimal;
             }
         }
     }
@@ -42,15 +44,15 @@ struct ReactNativeModule
     REACT_METHOD(exitFullscreen)
     void exitFullscreen() noexcept
     {
-        auto view = Windows::UI::ViewManagement::ApplicationView::GetForCurrentView();
+        auto view = ApplicationView::GetForCurrentView();
         view->ExitFullScreenMode();
-        view->FullScreenSystemOverlayMode = Windows::UI::ViewManagement::FullScreenSystemOverlayMode::Standard;
+        view->FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Standard;
     }
 
     REACT_METHOD(isActive)
     void isActive(std::function<void(bool)> &&callback) noexcept
     {
-        auto view = Windows::UI::ViewManagement::ApplicationView::GetForCurrentView();
+        auto view = ApplicationView::GetForCurrentView();
         callback(view->IsFullScrenMode);
     }
 
