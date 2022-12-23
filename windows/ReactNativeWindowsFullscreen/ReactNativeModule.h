@@ -48,7 +48,7 @@ struct ReactNativeModule
     }
 
     REACT_METHOD(isActive)
-    void isActive(std::function<void(std::bool)> &&callback) noexcept
+    void isActive(std::function<void(bool)> &&callback) noexcept
     {
         auto view = Windows::UI::ViewManagement::ApplicationView::GetForCurrentView();
         callback(view->IsFullScrenMode);
