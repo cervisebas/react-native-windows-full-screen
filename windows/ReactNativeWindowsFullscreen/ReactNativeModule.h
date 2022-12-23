@@ -2,8 +2,10 @@
 
 #include "JSValue.h"
 #include "NativeModules.h"
+#include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
+using namespace Windows::Foundation;
 using namespace Microsoft::ReactNative;
 using namespace Windows::UI::ViewManagement;
 
