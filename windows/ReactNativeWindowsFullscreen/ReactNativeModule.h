@@ -34,12 +34,10 @@ struct ReactNativeModule
     void enterFullscreen() noexcept
     {
         auto view = ApplicationView::GetForCurrentView();
-        if (view->IsFullScrenMode)
+        if (!view.IsFullScreenMode())
         {
-            if (view->TryEnterFullScreenMode())
-            {
-                view->FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Minimal;
-            }
+            view.TryEnterFullScreenMode();
+            //view.FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Minimal;
         }
     }
 
@@ -47,15 +45,15 @@ struct ReactNativeModule
     void exitFullscreen() noexcept
     {
         auto view = ApplicationView::GetForCurrentView();
-        view->ExitFullScreenMode();
-        view->FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Standard;
+        view.ExitFullScreenMode();
+        //view.FullScreenSystemOverlayMode = FullScreenSystemOverlayMode::Standard;
     }
 
     REACT_METHOD(isActive)
     void isActive(std::function<void(bool)> &&callback) noexcept
     {
         auto view = ApplicationView::GetForCurrentView();
-        callback(view->IsFullScrenMode);
+        callback(view.IsFullScreenMode());
     }
 
     private:
